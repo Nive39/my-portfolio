@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Nivetha</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+
+<header>
+    <a class="logo" href="index.html">Nivetha<span>.</span></a>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="skills.html">Skills</a>
+        <a href="projects.html">Projects</a>
+        <a class="active" href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<main>
+    <section class="page-intro">
+        <span class="eyebrow">LET'S TALK</span>
+
+        <h1 class="page-title">
+            Let's Create <span>Something Amazing.</span>
+        </h1>
+
+        <p>
+            Have an idea, a project, or an opportunity? I'd love to hear
+            from you. Let's connect and create something meaningful together.
+        </p>
+    </section>
+
+    <section class="contact-layout">
+        <aside class="contact-box">
+            <div class="icon-tile">✉</div>
+
+            <h2>Get in touch</h2>
+
+            <p>
+                Feel free to reach out about projects, learning
+                opportunities or collaboration.
+            </p>
+
+            <p>
+                <strong>Email</strong><br>
+                <a href="mailto:knivetha822008@gmail.com">
+                    knivetha822008@gmail.com
+                </a>
+            </p>
+
+            <p>
+                <strong>GitHub</strong><br>
+                <a href="https://github.com/Nive39"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    github.com/Nive39
+                </a>
+            </p>
+        </aside>
+
+        <form class="contact-form" id="contactForm">
+            <h2>Send a message</h2>
+
+            <label for="contactName">Your name</label>
+            <input
+                id="contactName"
+                name="contactName"
+                required
+                autocomplete="name"
+                placeholder="Enter your name"
+            >
+
+            <label for="contactEmail">Email address</label>
+            <input
+                id="contactEmail"
+                name="contactEmail"
+                type="email"
+                required
+                autocomplete="email"
+                placeholder="you@example.com"
+            >
+
+            <label for="contactSubject">Subject</label>
+            <input
+                id="contactSubject"
+                name="contactSubject"
+                required
+                placeholder="What is this about?"
+            >
+
+            <label for="contactMessage">Message</label>
+            <textarea
+                id="contactMessage"
+                name="contactMessage"
+                required
+                placeholder="Write your message..."
+            ></textarea>
+
+            <div class="form-actions">
+                <button class="btn" type="submit">
+                    Send Message ↗
+                </button>
+            </div>
+
+            <p
+                class="status"
+                id="contactStatus"
+                role="status"
+                aria-live="polite"
+            ></p>
+        </form>
+    </section>
+</main>
+
+<footer>© 2026 Nivetha Krishnasamy</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
+```
