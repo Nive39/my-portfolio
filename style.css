@@ -2213,3 +2213,145 @@ button:hover,
     text-decoration: none;
 }
 
+
+/* ===== FULL PORTFOLIO MOVING EFFECTS ===== */
+
+/* 1. Moving background */
+body {
+    background-size: 200% 200%;
+    animation: backgroundMove 16s ease-in-out infinite alternate;
+}
+
+@keyframes backgroundMove {
+    0%   { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* 2. Sections appear smoothly */
+@keyframes sectionEnter {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.page-intro,
+.hero {
+    animation: sectionEnter 0.9s ease both;
+}
+
+/* 3. Floating profile photo */
+.visual .profile-card {
+    animation: profileFloat 4s ease-in-out infinite;
+}
+
+@keyframes profileFloat {
+    0%, 100% { transform: translateY(0) rotate(1deg); }
+    50%      { transform: translateY(-12px) rotate(-1deg); }
+}
+
+/* 4. Floating labels */
+.float-a {
+    animation: labelFloat 3.5s ease-in-out infinite;
+}
+
+.float-b {
+    animation: labelFloat 4s ease-in-out infinite reverse;
+}
+
+@keyframes labelFloat {
+    0%, 100% { translate: 0 0; }
+    50%      { translate: 0 -9px; }
+}
+
+/* 5. Cards move up smoothly */
+.card,
+.about-panel,
+.list-item,
+.contact-box,
+.contact-form {
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+.card:hover,
+.list-item:hover,
+.contact-box:hover,
+.contact-form:hover {
+    transform: translateY(-8px);
+}
+
+/* 6. Buttons move on hover */
+.btn:hover,
+nav a:hover {
+    transform: translateY(-3px);
+}
+
+/* 7. Animated heading accent */
+.hero h1 span,
+.page-title span {
+    background: linear-gradient(
+        90deg,
+        #777bc7,
+        #ad8fe5,
+        #777bc7
+    );
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: headingShine 4s linear infinite;
+}
+
+@keyframes headingShine {
+    to { background-position: 200% center; }
+}
+
+/* 8. Respect reduced-motion settings */
+@media (prefers-reduced-motion: reduce) {
+    body,
+    .visual .profile-card,
+    .float-a,
+    .float-b,
+    .hero,
+    .page-intro,
+    .hero h1 span,
+    .page-title span {
+        animation: none !important;
+    }
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Scroll reveal initial state */
+.reveal-item {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal-item.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Avoid hidden content if JavaScript is disabled */
+@media (prefers-reduced-motion: reduce) {
+    .reveal-item {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}

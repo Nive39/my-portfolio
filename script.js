@@ -107,3 +107,28 @@ if (contactForm && window.emailjs) {
         }
     });
 }
+
+/* ===== SCROLL REVEAL EFFECT ===== */
+
+const revealItems = document.querySelectorAll(
+    '.section, .card, .about-panel, .list-item, .contact-box, .contact-form'
+);
+
+revealItems.forEach(item => {
+    item.classList.add('reveal-item');
+});
+
+const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.12
+});
+
+revealItems.forEach(item => {
+    revealObserver.observe(item);
+});
