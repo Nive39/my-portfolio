@@ -2355,3 +2355,733 @@ nav a:hover {
         transition: none;
     }
 }
+
+/* ===== INTERACTIVE PORTFOLIO EFFECTS ===== */
+
+/* 1. Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+}
+
+/* Animated background glow */
+body {
+    background-size: 200% 200%;
+    animation: backgroundFlow 18s ease infinite;
+}
+
+@keyframes backgroundFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* 2. Intro animation */
+.hero,
+.home-content,
+.hero-content {
+    animation: heroEnter 1s ease both;
+}
+
+@keyframes heroEnter {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Floating profile photo */
+.profile-card img,
+.profile-image,
+.profile-pic {
+    animation: photoFloat 4s ease-in-out infinite;
+}
+
+@keyframes photoFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* 3. Project and skill card hover */
+.card,
+.project-card,
+.skill-card {
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.card:hover,
+.project-card:hover,
+.skill-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(85, 125, 255, 0.22);
+    border-color: #8eb8ff;
+}
+
+/* Buttons */
+button,
+.btn,
+a.btn {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+button:hover,
+.btn:hover,
+a.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 18px rgba(85, 125, 255, 0.2);
+}
+
+/* 4. Scroll progress bar */
+#scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background: linear-gradient(90deg, #80caff, #9b8cff);
+    z-index: 99999;
+    transition: width 0.08s linear;
+    pointer-events: none;
+}
+
+/* 5. Scroll reveal */
+.reveal-item {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal-item.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animated skill bars */
+.skill-bar,
+.progress-bar {
+    transform-origin: left;
+}
+
+.skill-bar.animate,
+.progress-bar.animate {
+    animation: skillFill 1.3s ease forwards;
+}
+
+@keyframes skillFill {
+    from { width: 0; }
+}
+
+/* 6. Back-to-top button */
+#back-to-top {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    width: 46px;
+    height: 46px;
+    border: none;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #83caff, #a497ff);
+    color: #17203c;
+    font-size: 23px;
+    cursor: pointer;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(90, 120, 255, 0.25);
+}
+
+#back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#back-to-top:hover {
+    transform: translateY(-5px);
+}
+
+/* Respect reduced-motion settings */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .reveal-item {
+        opacity: 1;
+        transform: none;
+    }
+}
+/* Light and Dark Mode */
+:root {
+    --bg-color: #f0f8ff;
+    --text-color: #183153;
+    --card-color: #ffffff;
+    --accent-color: #6c9ff8;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.4s, color 0.4s;
+}
+
+.card,
+.project-card,
+.skill-card,
+.about-panel,
+.contact-box,
+.contact-form {
+    background-color: var(--card-color);
+    color: var(--text-color);
+    transition: background-color 0.4s, color 0.4s;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    --bg-color: #101827;
+    --text-color: #e5edff;
+    --card-color: #1c2940;
+    --accent-color: #9b8cff;
+}
+
+#theme-toggle {
+    padding: 10px 16px;
+    border: 1px solid var(--accent-color);
+    border-radius: 25px;
+    background: var(--card-color);
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+#theme-toggle:hover {
+    transform: translateY(-2px);
+    background: var(--accent-color);
+    color: white;
+}
+
+/* Light / Dark mode */
+body,
+header,
+section,
+footer,
+.card,
+.profile-card {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode {
+    background: #101827;
+    color: #e5edff;
+}
+
+body.dark-mode header,
+body.dark-mode footer {
+    background: #101827;
+    color: #e5edff;
+}
+
+body.dark-mode .card,
+body.dark-mode .profile-card {
+    background: #1c2940;
+    color: #e5edff;
+}
+
+body.dark-mode p,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3 {
+    color: #e5edff;
+}
+
+#theme-toggle {
+    cursor: pointer;
+    padding: 9px 14px;
+    border: 1px solid #8b9ff5;
+    border-radius: 22px;
+    background: transparent;
+    color: inherit;
+}
+
+/* ===== DARK MODE COLORS ===== */
+
+body.dark-mode {
+    background-color: #101827 !important;
+    color: #e5edff !important;
+}
+
+body.dark-mode header,
+body.dark-mode main,
+body.dark-mode footer {
+    background-color: #101827 !important;
+    color: #e5edff !important;
+}
+
+body.dark-mode .hero,
+body.dark-mode .section {
+    background-color: #101827 !important;
+}
+
+body.dark-mode .card,
+body.dark-mode .profile-card {
+    background-color: #1c2940 !important;
+    color: #e5edff !important;
+}
+
+body.dark-mode p,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode a {
+    color: #e5edff;
+}
+
+/* ===== CONTACT INTERACTIONS ===== */
+
+.contact-form input,
+.contact-form textarea {
+    box-sizing: border-box;
+    width: 100%;
+    border: 1px solid #c9d9f5;
+    border-radius: 12px;
+    padding: 13px 15px;
+    outline: none;
+    transition: border-color 0.25s ease,
+                box-shadow 0.25s ease,
+                transform 0.25s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #6c9ff8;
+    box-shadow: 0 0 0 4px rgba(108, 159, 248, 0.18);
+    transform: translateY(-2px);
+}
+
+.character-count {
+    text-align: right;
+    font-size: 12px;
+    margin-top: 6px;
+    color: #7183a0;
+}
+
+.contact-form .btn {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.contact-form .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(80, 120, 200, 0.2);
+}
+
+.contact-form .btn:disabled {
+    opacity: 0.65;
+    cursor: wait;
+    transform: none;
+}
+
+body.dark-mode .contact-form input,
+body.dark-mode .contact-form textarea {
+    background: #101827;
+    color: #e5edff;
+    border-color: #465979;
+}
+
+body.dark-mode .character-count {
+    color: #c0cce2;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form .btn {
+        transition: none;
+    }
+}
+
+/* Interactive Project Cards */
+.project-card {
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+    border: 1px solid transparent;
+    border-radius: 15px;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    border-color: #75bfff;
+    box-shadow: 0 12px 30px rgba(80, 160, 255, 0.25);
+}
+
+/* Project card heading */
+.project-card h3 {
+    transition: color 0.3s ease;
+}
+
+.project-card:hover h3 {
+    color: #369bff;
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .project-card,
+    .project-card h3 {
+        transition: none;
+    }
+
+    .project-card:hover {
+        transform: none;
+    }
+}
+
+/* Scroll Reveal Animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+
+/* 3D Blooming Skills Wall */
+.bloom-skills {
+    padding: 60px 20px;
+    text-align: center;
+    color: #234568;
+}
+
+.bloom-skills h2 {
+    color: #267fc2;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin-bottom: 10px;
+}
+
+.bloom-subtitle {
+    color: #64829e;
+    margin-bottom: 40px;
+}
+
+.bloom-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+    max-width: 1050px;
+    margin: auto;
+    perspective: 1000px;
+}
+
+.bloom-card {
+    min-width: 0;
+    height: 235px;
+    padding: 0;
+    border: 1px solid #d4eaff;
+    border-radius: 22px;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    text-align: center;
+    perspective: 1000px;
+    animation: bloomFloat 4s ease-in-out infinite;
+    transition: box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.bloom-card:nth-child(2) {
+    animation-delay: -1s;
+}
+
+.bloom-card:nth-child(3) {
+    animation-delay: -2s;
+}
+
+.bloom-card:nth-child(4) {
+    animation-delay: -3s;
+}
+
+.bloom-inner {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.65s ease;
+}
+
+.bloom-front,
+.bloom-back {
+    grid-area: 1 / 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    padding: 18px;
+    border-radius: 21px;
+    background: linear-gradient(145deg, #ffffff, #e7f4ff);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.bloom-back {
+    transform: rotateY(180deg);
+    background: linear-gradient(145deg, #d8efff, #fafdff);
+    color: #315b7e;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.skill-icon {
+    font-size: 42px;
+    transition: transform 0.35s ease;
+}
+
+.skill-name {
+    font-size: 21px;
+    font-weight: 700;
+    color: #247bb9;
+}
+
+.skill-hint {
+    font-size: 12px;
+    color: #64829e;
+}
+
+.bloom-card:hover,
+.bloom-card:focus-visible {
+    border-color: #72bdff;
+    box-shadow:
+        0 0 12px rgba(77, 170, 255, 0.35),
+        0 0 35px rgba(77, 170, 255, 0.22);
+}
+
+.bloom-card:hover .skill-icon {
+    transform: scale(1.2);
+}
+
+.bloom-card.is-flipped .bloom-inner {
+    transform: rotateY(180deg);
+}
+
+.bloom-card.is-flipped {
+    animation-play-state: paused;
+}
+
+@keyframes bloomFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@media (max-width: 750px) {
+    .bloom-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+}
+
+@media (max-width: 380px) {
+    .bloom-grid {
+        gap: 10px;
+    }
+
+    .bloom-card {
+        height: 215px;
+    }
+
+    .bloom-front,
+    .bloom-back {
+        padding: 10px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .bloom-card {
+        animation: none;
+        transition: none;
+    }
+
+    .bloom-inner,
+    .skill-icon {
+        transition: none;
+    }
+}
+
+/* 3D Project Carousel */
+.project-carousel-section {
+    padding: 60px 20px;
+    text-align: center;
+    overflow: hidden;
+    color: #234568;
+}
+
+.project-carousel-section h2 {
+    color: #267fc2;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+}
+
+.carousel-scene {
+    max-width: 750px;
+    margin: 40px auto 20px;
+    perspective: 1100px;
+    touch-action: pan-y;
+}
+
+.project-carousel {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    transform-style: preserve-3d;
+    transition: transform 0.55s ease;
+    cursor: grab;
+}
+
+.project-carousel:active {
+    cursor: grabbing;
+}
+
+.carousel-card {
+    grid-area: 1 / 1;
+    padding: 30px;
+    border: 1px solid #c9e6ff;
+    border-radius: 24px;
+    background: linear-gradient(145deg, #ffffff, #eaf6ff);
+    box-shadow: 0 15px 40px rgba(65, 145, 210, 0.12);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateX(70px) rotateY(-18deg) scale(0.92);
+    transition:
+        opacity 0.45s ease,
+        transform 0.55s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease,
+        visibility 0.45s;
+}
+
+.carousel-card.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(0) rotateY(0) scale(1);
+    box-shadow: 0 18px 45px rgba(65, 145, 210, 0.2);
+}
+
+.carousel-card.active:hover {
+    border-color: #75bfff;
+    box-shadow:
+        0 18px 40px rgba(65, 145, 210, 0.2),
+        0 0 28px rgba(95, 180, 255, 0.25);
+}
+
+.carousel-icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.carousel-card h3 {
+    color: #267fc2;
+    font-size: 1.4rem;
+}
+
+.carousel-card p {
+    line-height: 1.7;
+}
+
+.carousel-tech {
+    color: #347fb5;
+    font-size: 0.9rem;
+}
+
+.carousel-details,
+.carousel-controls button {
+    border: 1px solid #a8d7ff;
+    border-radius: 12px;
+    background: #dff1ff;
+    color: #1769aa;
+    padding: 11px 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.carousel-details:hover,
+.carousel-controls button:hover {
+    background: #75bfff;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.carousel-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+}
+
+#carouselCounter {
+    color: #347fb5;
+    font-weight: 600;
+}
+
+.carousel-hint {
+    color: #64829e;
+    font-size: 13px;
+}
+
+@media (max-width: 500px) {
+    .carousel-card {
+        padding: 22px 17px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .project-carousel,
+    .carousel-card,
+    .carousel-details,
+    .carousel-controls button {
+        transition: none;
+    }
+}
+/* Project Details popup - remove unwanted left corner area */
+.project-modal-content .modal-close {
+    display: none !important;
+}
+
+.project-modal-content {
+    padding: 28px !important;
+    border-radius: 18px;
+}
+
+.project-modal-content .modal-github-btn {
+    display: inline-block;
+    margin-top: 12px;
+}

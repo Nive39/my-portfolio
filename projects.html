@@ -1,17 +1,21 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#eaf4ff">
     <title>Projects | Nivetha</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <header>
     <a class="logo" href="index.html">Nivetha<span>.</span></a>
+
     <nav>
+        <button id="theme-toggle" type="button">🌙 Dark Mode</button>
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="skills.html">Skills</a>
@@ -21,22 +25,30 @@
 </header>
 
 <main>
+
+    <!-- Page Introduction -->
     <section class="page-intro">
         <span class="eyebrow">THINGS I'VE BUILT</span>
-        <h1 class="page-title">My <span>Projects</span></h1>
+
+        <h1 class="page-title">
+            My <span>Projects</span>
+        </h1>
+
         <p>
             A selection of projects that help me practise programming,
             application design and problem solving.
         </p>
     </section>
 
-    <!-- Main Projects -->
+
+    <!-- Main Project Cards -->
     <section class="cards section">
 
-        <!-- Visitor Entry Logging System -->
         <article class="card">
             <div class="icon-tile">▦</div>
+
             <h3>Visitor Entry Logging System</h3>
+
             <p>
                 A Java application for visitor registration, QR
                 identification, entry and exit tracking, and PDF reports.
@@ -76,9 +88,10 @@
             </div>
         </article>
 
-        <!-- C Programming Task -->
+
         <article class="card">
             <div class="icon-tile">💻</div>
+
             <h3>C Programming Task</h3>
 
             <p>
@@ -107,8 +120,119 @@
 
     </section>
 
+
+    <!-- 3D Interactive Project Carousel -->
+    <section class="project-carousel-section">
+
+        <span class="eyebrow">INTERACTIVE SHOWCASE</span>
+
+        <h2>Explore My Projects</h2>
+
+        <p class="carousel-intro">
+            Drag, swipe or use the arrows to explore my projects.
+        </p>
+
+        <div class="carousel-scene" id="carouselScene">
+
+            <div class="project-carousel" id="projectCarousel">
+
+                <!-- Project 1 -->
+                <article class="carousel-card">
+
+                    <div class="carousel-icon">▦</div>
+
+                    <span class="carousel-number">PROJECT 01</span>
+
+                    <h3>Visitor Entry Logging System</h3>
+
+                    <p>
+                        Java application for visitor registration,
+                        QR identification, entry/exit tracking,
+                        and PDF reports.
+                    </p>
+
+                    <div class="carousel-tags">
+                        <span>Java</span>
+                        <span>Java Swing</span>
+                        <span>QR Code</span>
+                        <span>PDF Reports</span>
+                    </div>
+
+                    <a class="carousel-details"
+                       href="https://github.com/Nive39/Visitor-App"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        View on GitHub ↗
+                    </a>
+
+                </article>
+
+
+                <!-- Project 2 -->
+                <article class="carousel-card">
+
+                    <div class="carousel-icon">💻</div>
+
+                    <span class="carousel-number">PROJECT 02</span>
+
+                    <h3>C Programming Task</h3>
+
+                    <p>
+                        C programming exercises covering variables,
+                        operators, conditions, loops, arrays and functions.
+                    </p>
+
+                    <div class="carousel-tags">
+                        <span>C Programming</span>
+                        <span>Loops</span>
+                        <span>Arrays</span>
+                        <span>Problem Solving</span>
+                    </div>
+
+                    <a class="carousel-details"
+                       href="https://github.com/Nive39/C-Programming"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        View on GitHub ↗
+                    </a>
+
+                </article>
+
+            </div>
+        </div>
+
+
+        <!-- Carousel Controls -->
+        <div class="carousel-controls">
+
+            <button id="carouselPrev"
+                    type="button"
+                    aria-label="Previous project">
+                ←
+            </button>
+
+            <span id="carouselCounter" aria-live="polite">
+                01 / 02
+            </span>
+
+            <button id="carouselNext"
+                    type="button"
+                    aria-label="Next project">
+                →
+            </button>
+
+        </div>
+
+        <p class="carousel-hint">
+            ✦ Drag or swipe to explore
+        </p>
+
+    </section>
+
+
     <!-- Mini Projects -->
     <section class="mini-projects">
+
         <span class="eyebrow">C PROGRAMMING IDEAS</span>
 
         <h2>Mini Projects</h2>
@@ -121,6 +245,7 @@
 
             <div class="mini-project-item" tabindex="0">
                 <span>1. Bank Management System</span>
+
                 <div class="project-tooltip">
                     Bank account, deposit, withdrawal, balance details manage pannum.
                 </div>
@@ -128,6 +253,7 @@
 
             <div class="mini-project-item" tabindex="0">
                 <span>2. Campus Transport System</span>
+
                 <div class="project-tooltip">
                     College transport and bus details manage pannum.
                 </div>
@@ -135,6 +261,7 @@
 
             <div class="mini-project-item" tabindex="0">
                 <span>3. Retail Sales Analytics System</span>
+
                 <div class="project-tooltip">
                     Shop sales details analyze pannum.
                 </div>
@@ -142,6 +269,7 @@
 
             <div class="mini-project-item" tabindex="0">
                 <span>4. Student Attendance Management System</span>
+
                 <div class="project-tooltip">
                     Students attendance track pannum.
                 </div>
@@ -149,6 +277,7 @@
 
             <div class="mini-project-item" tabindex="0">
                 <span>5. Student Registration</span>
+
                 <div class="project-tooltip">
                     Student details register pannum.
                 </div>
@@ -156,6 +285,7 @@
 
             <div class="mini-project-item" tabindex="0">
                 <span>6. Student Result Analysis System</span>
+
                 <div class="project-tooltip">
                     Student marks and results analyze pannum.
                 </div>
@@ -163,6 +293,7 @@
 
             <div class="mini-project-item" tabindex="0">
                 <span>7. Salary Analysis</span>
+
                 <div class="project-tooltip">
                     Employee salary details calculate and analyze pannum.
                 </div>
@@ -170,21 +301,30 @@
 
         </div>
 
-        <!-- One GitHub button for all mini projects -->
+
+        <!-- Mini Projects GitHub -->
         <div class="mini-project-github">
+
             <a class="btn"
                href="https://github.com/Nive39/Mini-projects"
                target="_blank"
                rel="noopener noreferrer">
                 View All Mini Projects on GitHub ↗
             </a>
+
         </div>
 
     </section>
+
 </main>
 
-<footer>© 2026 Nivetha Krishnasamy</footer>
+
+<footer>
+    © 2026 Nivetha Krishnasamy
+</footer>
 
 <script src="script.js"></script>
+
 </body>
 </html>
+```

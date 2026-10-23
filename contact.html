@@ -1,8 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#eaf4ff">
     <title>Contact | Nivetha</title>
     <link rel="stylesheet" href="style.css">
 
@@ -14,6 +16,9 @@
     <a class="logo" href="index.html">Nivetha<span>.</span></a>
 
     <nav>
+        <button id="theme-toggle" type="button" aria-label="Switch to dark mode">
+            🌙 Dark Mode
+        </button>
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="skills.html">Skills</a>
@@ -37,6 +42,7 @@
     </section>
 
     <section class="contact-layout">
+
         <aside class="contact-box">
             <div class="icon-tile">✉</div>
 
@@ -59,18 +65,20 @@
                 <a href="https://github.com/Nive39"
                    target="_blank"
                    rel="noopener noreferrer">
-                    github.com/Nive39
+                    github.com/Nive39 ↗
                 </a>
             </p>
         </aside>
 
         <form class="contact-form" id="contactForm">
-            <h2>Send a message</h2>
+            <h2>Send a message ✨</h2>
+            <p>Fill in the details below to get in touch.</p>
 
             <label for="contactName">Your name</label>
             <input
                 id="contactName"
                 name="contactName"
+                type="text"
                 required
                 autocomplete="name"
                 placeholder="Enter your name"
@@ -90,7 +98,9 @@
             <input
                 id="contactSubject"
                 name="contactSubject"
+                type="text"
                 required
+                maxlength="100"
                 placeholder="What is this about?"
             >
 
@@ -99,11 +109,17 @@
                 id="contactMessage"
                 name="contactMessage"
                 required
+                maxlength="500"
+                rows="5"
                 placeholder="Write your message..."
             ></textarea>
 
+            <div class="character-count" aria-live="polite">
+                <span id="message-count">0</span>/500 characters
+            </div>
+
             <div class="form-actions">
-                <button class="btn" type="submit">
+                <button class="btn" id="send-message-btn" type="submit">
                     Send Message ↗
                 </button>
             </div>
@@ -115,12 +131,12 @@
                 aria-live="polite"
             ></p>
         </form>
+
     </section>
 </main>
 
-<footer>© 2026 Nivetha Krishnasamy</footer>
+<footer>© 2026 Nivetha Krishnasamy | My Portfolio</footer>
 
 <script src="script.js"></script>
 </body>
 </html>
-```
